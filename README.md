@@ -1,1 +1,54 @@
-# rpishake-sigfox
+# Rpishake Sigfox
+
+How to send a Sigfox message using a RaspberryShake
+
+##### Aim of this script is to control the Sigfox shield to send messages on the SigFox network.
+
+The expansion board is for raspberry pi mainboard and allows to use the [SigFox network](http://sigfox.com)
+
+- sendsigfox.py sends data over the Sigfox network.
+
+
+##### Usage
+
+'sendsigfox MESSAGE [path/to/serial]'
+
+- MESSAGE is an HEXA encoded string; 2 to 24 characters representing 1 to 12 bytes.
+
+- Second parameter an the optional path to the serial port, default is /dev/ttyAMA0.
+
+Examples :
+- 'sendsigfox 00AA55BF' : sends the 4 bytes 0x00 0xAA 0x55 0xBF
+- 'sendsigfox CCDD /dev/ttyS0' : sends the 2 bytes 0xCC 0xDD over /dev/ttyS0
+
+##### Prerequist
+
+Disable Raspberry Pi terminal on serial port with raspi-config utility:
+
+sudo raspi-config
+
+9 Advanced Options >> A8 Serial >> NO
+
+Install pyserial
+
+sudo apt-get install python-serial
+
+##### Pi3 requirements
+
+In '/boot/config.txt' disable if present 'dtoverlay=pi3-miniuart-bt' by adding a '\#' character at line begining
+
+Add if necessary :
+
+dtoverlay=pi3-disable-bt
+
+enable_uart=1
+
+Then reboot :
+
+sudo reboot
+
+Serial port to use is the script's default one : /dev/ttyAMA0
+
+##### License
+
+MIT License / read license.txt
