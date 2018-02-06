@@ -81,6 +81,7 @@ class Sigfox(object):
         if self.WaitFor('OK', 'ERROR', 3) :
                 print('SigFox Modem OK')
                 self.ser.write('AT$RC\r')
+                sleep(0.001)
                 self.ser.write("AT$SF={0}\r".format(message))
                 print('Sending ...')
                 if self.WaitFor('OK', 'ERROR', 15) :
