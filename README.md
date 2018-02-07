@@ -6,12 +6,13 @@ How to send a Sigfox message using a RaspberryShake
 
 The Sigfox Shield is for Raspberry Pi mainboard and allows to use the [Sigfox network](http://sigfox.com)
 
-- sendsigfox.py sends data over the Sigfox network.
-
 
 ### Usage
 
-'sendsigfox MESSAGE [path/to/serial]'
+```
+cd sigfox/
+python sendsigfox.py CAFE [path/to/serial]
+```
 
 - MESSAGE is an HEXA encoded string; 2 to 24 characters representing 1 to 12 bytes.
 
@@ -48,6 +49,11 @@ Then reboot :
 sudo reboot
 
 Serial port to use is the script's default one : /dev/ttyAMA0
+
+## Sigfox Backend
+
+To see your messages in the Sigfox backend, you can follow the procedure using this Github repository:
+https://github.com/Iotnet/Registro-Devkit-IoTnet
 
 ### License
 
