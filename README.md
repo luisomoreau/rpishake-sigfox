@@ -52,8 +52,10 @@ Serial port to use is the script's default one : /dev/ttyAMA0
 
 ## Sigfox Backend
 
-To see your messages in the Sigfox backend, you can follow the procedure using this Github repository:
+* To see your messages in the Sigfox backend, you can follow the procedure using this Github repository:
 https://github.com/Iotnet/Registro-Devkit-IoTnet
+
+* To configure a callback to push your data to an external platform, you can use this repository: https://github.com/Iotnet/Callback
 
 ### License
 
